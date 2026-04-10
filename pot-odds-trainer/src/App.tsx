@@ -51,14 +51,15 @@ const Explanation = ({ drill }: { drill: Drill }) => {
   switch (drill.type) {
     case "pot-odds": {
       const total = drill.potSize + drill.betSize;
+      const totalWithCall = total + drill.betSize;
       return (
         <div className="explanation">
           <p>
-            Total pot: {formatMoney(total)} — you pay {formatMoney(drill.betSize)} to win{" "}
-            {formatMoney(total)}
+            Pot after his bet: {formatMoney(total)} — you pay {formatMoney(drill.betSize)}, total
+            pot becomes {formatMoney(totalWithCall)}
           </p>
           <p>
-            {drill.betSize}/{total} = <strong>{drill.correctPercent}%</strong> (ratio:{" "}
+            {drill.betSize}/{totalWithCall} = <strong>{drill.correctPercent}%</strong> (ratio:{" "}
             {drill.correctRatio})
           </p>
         </div>

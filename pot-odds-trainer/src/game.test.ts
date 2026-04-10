@@ -21,10 +21,10 @@ describe("generatePotOddsDrill", () => {
     }
   });
 
-  it("calculates correct percentage", () => {
+  it("calculates correct percentage including your call", () => {
     const drill = generatePotOddsDrill();
-    const total = drill.potSize + drill.betSize;
-    const expected = Math.round((drill.betSize / total) * 100 * 10) / 10;
+    const totalWithCall = drill.potSize + drill.betSize + drill.betSize;
+    const expected = Math.round((drill.betSize / totalWithCall) * 100 * 10) / 10;
     expect(drill.correctPercent).toBe(expected);
   });
 });

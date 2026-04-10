@@ -63,7 +63,8 @@ export const generatePotOddsDrill = (): PotOddsDrill => {
   const fraction = pick(BET_FRACTIONS);
   const betSize = Math.round(potSize * fraction);
   const totalPot = potSize + betSize;
-  const correctPercent = roundTo((betSize / totalPot) * 100, 1);
+  const totalWithCall = totalPot + betSize;
+  const correctPercent = roundTo((betSize / totalWithCall) * 100, 1);
   const correctRatio = simplifyRatio(totalPot, betSize);
 
   return { type: "pot-odds", potSize, betSize, correctRatio, correctPercent };
@@ -83,7 +84,8 @@ export const generateCallOrFoldDrill = (): CallOrFoldDrill => {
   const fraction = pick(BET_FRACTIONS);
   const betSize = Math.round(potSize * fraction);
   const totalPot = potSize + betSize;
-  const potOddsPercent = roundTo((betSize / totalPot) * 100, 1);
+  const totalWithCall = totalPot + betSize;
+  const potOddsPercent = roundTo((betSize / totalWithCall) * 100, 1);
 
   const { draw, outs } = pick(DRAWS);
   const street = pick(["flop", "turn"] as const);
