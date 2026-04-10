@@ -233,7 +233,7 @@ Nate Silver frames it as: **find your edge and size your bets accordingly**. Don
 
 Doyle adds the human element: **your read on the opponent is what makes the probability estimate accurate**. Math without reads is theory. Reads without math is gambling. Together, they're poker.
 
-> Tomorrow night: you don't need to calculate EV at the table. You need to *feel* it. "Am I getting a good price? Is my hand likely best? Will I get paid if I hit?" If the answers point the same direction, you already know the play.
+> At the table, you don't need to calculate EV. You need to *feel* it. "Am I getting a good price? Is my hand likely best? Will I get paid if I hit?" If the answers point the same direction, you already know the play.
 
 ---
 
