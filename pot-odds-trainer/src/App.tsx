@@ -13,7 +13,7 @@ const DrillPrompt = ({ drill }: { drill: Drill }) => {
         <div className="prompt">
           <div className="scenario">
             <span className="chip pot">Pot {formatMoney(drill.potSize)}</span>
-            <span className="chip bet">Bet {formatMoney(drill.betSize)}</span>
+            <span className="chip bet">Villain bets {formatMoney(drill.betSize)}</span>
           </div>
           <p className="question">What % equity do you need to call?</p>
         </div>
@@ -35,7 +35,7 @@ const DrillPrompt = ({ drill }: { drill: Drill }) => {
         <div className="prompt">
           <div className="scenario">
             <span className="chip pot">Pot {formatMoney(drill.potSize)}</span>
-            <span className="chip bet">Bet {formatMoney(drill.betSize)}</span>
+            <span className="chip bet">Villain bets {formatMoney(drill.betSize)}</span>
             <span className="chip draw">{drill.draw}</span>
             <span className="chip street">
               {drill.street === "flop" ? "On the flop" : "On the turn"}
@@ -50,13 +50,16 @@ const DrillPrompt = ({ drill }: { drill: Drill }) => {
 const Explanation = ({ drill }: { drill: Drill }) => {
   switch (drill.type) {
     case "pot-odds": {
-      const total = drill.potSize + drill.betSize;
-      const totalWithCall = total + drill.betSize;
+      const potAfterBet = drill.potSize + drill.betSize;
+      const totalWithCall = potAfterBet + drill.betSize;
       return (
         <div className="explanation">
           <p>
-            Pot after his bet: {formatMoney(total)} — you pay {formatMoney(drill.betSize)}, total
-            pot becomes {formatMoney(totalWithCall)}
+            Pot was {formatMoney(drill.potSize)}, villain bets {formatMoney(drill.betSize)} →
+            pot is now {formatMoney(potAfterBet)}
+          </p>
+          <p>
+            You call {formatMoney(drill.betSize)} → total pot {formatMoney(totalWithCall)}
           </p>
           <p>
             {drill.betSize}/{totalWithCall} = <strong>{drill.correctPercent}%</strong> (ratio:{" "}
