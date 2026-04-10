@@ -55,8 +55,8 @@ const Explanation = ({ drill }: { drill: Drill }) => {
       return (
         <div className="explanation">
           <p>
-            Pot was {formatMoney(drill.potSize)}, villain bets {formatMoney(drill.betSize)} →
-            pot is now {formatMoney(potAfterBet)}
+            Pot was {formatMoney(drill.potSize)}, villain bets {formatMoney(drill.betSize)} → pot is
+            now {formatMoney(potAfterBet)}
           </p>
           <p>
             You call {formatMoney(drill.betSize)} → total pot {formatMoney(totalWithCall)}
