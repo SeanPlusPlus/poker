@@ -60,6 +60,43 @@ Now it's a fold. Same bet size, same pot — but your read changed the math.
 
 ---
 
+## EV Is a *Before* Thing, Not an After Thing
+
+A common misconception: EV is something you calculate after the hand to see if you were "right." It's the opposite. **EV is a decision-making tool. You use it before you act.**
+
+You never know his exact hand. Not preflop, not on the flop, not on the river. You're always operating with incomplete information. EV works *because* of that uncertainty, not despite it.
+
+**You're not betting against his hand. You're betting against his *range*** — the set of all hands he could plausibly have given how he's played so far.
+
+**Example: KQ suited heads up**
+
+Against a random hand, KQs is ~63% — a clear favorite, and getting it in is +EV. But KQs isn't inherently +EV or -EV. It depends on the range you're up against:
+
+| Opponent's Range | Your Equity with KQs | Verdict |
+|-----------------|---------------------|---------|
+| Random hand | ~63% | Slam dunk +EV |
+| Wide open (KJ, QT, suited junk) | ~60% | Very profitable |
+| Tight (TT+, AQ+) | ~38% | Marginal at best |
+| Only premiums (AA, KK, AK) | ~30% | Get out |
+
+Same cards in your hand. Wildly different EV — because the *range* changed.
+
+**How do you estimate the range?** Everything you've observed:
+- **Position** — UTG raise = strong range. Button open = could be anything.
+- **Player type** — tight guy who hasn't played a hand in an hour? Narrow. Loose guy on his third beer? Wide.
+- **Bet sizing** — unusual sizes often mean unusual hands.
+- **Timing** — snap-call usually means draw or medium hand. Long pause then raise usually means strength.
+
+You'll never know if your range estimate was right on any single hand. He might show you a weird bluff or a monster you didn't expect. Doesn't matter. If your range estimate was reasonable and you made the +EV play, **you played it right — even if you lost.**
+
+> **Silver's framing:** You're not trying to be right about *this hand*. You're trying to be right about *this type of situation* over hundreds of hands. One night, one hand — that's noise. Your decision process — that's signal.
+
+The guy who calls your all-in with 7-2 offsuit and rivers a full house? He got lucky. He made a -EV decision that happened to work once. Over a lifetime of poker, that guy goes broke. You don't.
+
+**Post hoc analysis is still useful** — but for calibration, not judgment. "I put him on a tight range but he showed up with J8s — maybe he's wider than I thought." That's learning. That makes your future range estimates more accurate, which makes your future EV calculations better.
+
+---
+
 ## Pot Odds: The Shortcut
 
 You don't need to do full EV math at the table. Pot odds give you a quick threshold.
@@ -135,6 +172,49 @@ This is why aggression is profitable in poker. Even with a mediocre hand, if the
 
 ---
 
+## Bluffing Is Not -EV. Bad Bluffing Is.
+
+There's a myth that bluffing is gambling — a reckless cowboy move. It's not. A well-constructed bluff is a +EV play backed by math. Here's the formula again:
+
+```
+EV of bluff = (Fold% × Pot) - (Call% × Your Bet)
+```
+
+Say the pot is $200 and you shove $150. How often does he need to fold?
+
+| He Folds | EV | Verdict |
+|---------|-----|---------|
+| 60% | (0.6 × $200) - (0.4 × $150) = **+$60** | Clearly profitable |
+| 50% | (0.5 × $200) - (0.5 × $150) = **+$25** | Still profitable |
+| 43% | Breakeven | **The threshold** |
+| 30% | (0.3 × $200) - (0.7 × $150) = **-$45** | Burning money |
+
+He doesn't need to fold most of the time. Just enough. 43% here. That's less than a coin flip.
+
+### Table Image Is an Investment
+
+Picture this: you play absurdly tight for 2.5 hours. Fold, fold, fold. Everyone at the table has noticed. Then you find yourself in a growing pot with J10 — nothing connects, you've got air. You shove.
+
+What does the table see? The tightest player at the table just pushed all in. Their brain screams "he's got it" and they fold.
+
+That's not cowboying. That's **cashing in 2.5 hours of image-building**. Brunson did exactly this — hours of discipline, then one massive play at the right moment. The tight image wasn't passive. It was an investment with a delayed payoff.
+
+### Pick Your Target
+
+The bluff has one critical dependency: **the target must be capable of folding.**
+
+| Target | Fold Equity | Bluff EV |
+|--------|------------|----------|
+| Tight/thinking player who respects your image | High | +EV |
+| Mediocre player who's paying attention | Medium | Depends on sizing |
+| Loose calling station on his third beer | Near zero | -EV, don't bother |
+
+Your tight image is a weapon — but it only works on people who are watching. The drunk loose guy calling with middle pair and a vibe? He doesn't care that you've folded for two hours. Value bet him relentlessly, but never bluff him.
+
+> **The rule:** Bluff the players who respect you. Value bet the players who don't.
+
+---
+
 ## Common EV Mistakes at Live Home Games
 
 | Mistake | Why It's -EV | Fix |
@@ -168,6 +248,8 @@ Doyle adds the human element: **your read on the opponent is what makes the prob
 | Implied odds | Extra money you'll win on later streets if you hit |
 | Fold equity | Probability opponent folds to your bet — adds EV to aggression |
 | Break-even % | Pot odds converted to a win percentage |
+| Range | The set of hands an opponent could have — what you're really playing against |
+| Table image | How opponents perceive your play style — a resource you build and spend |
 
 ---
 
